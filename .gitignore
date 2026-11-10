@@ -1,0 +1,5 @@
+.DS_Store
+mac/build/
+mac/dist/
+xcuserdata/
+*.xcuserstate
