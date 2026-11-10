@@ -14,7 +14,7 @@ rm -rf "$BUILD"
 xcodebuild -project ScanNPrint.xcodeproj -scheme ScanNPrint -configuration Release \
   -derivedDataPath "$BUILD" ARCHS="arm64 x86_64" ONLY_ACTIVE_ARCH=NO \
   CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="$IDENTITY" DEVELOPMENT_TEAM="$TEAM" \
-  ENABLE_HARDENED_RUNTIME=YES OTHER_CODE_SIGN_FLAGS="--timestamp" \
+  ENABLE_HARDENED_RUNTIME=YES CODE_SIGN_INJECT_BASE_ENTITLEMENTS=NO OTHER_CODE_SIGN_FLAGS="--timestamp" \
   clean build | grep -E "error:|BUILD"
 
 APP="$BUILD/Build/Products/Release/ScanNPrint.app"
